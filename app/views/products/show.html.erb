@@ -23,8 +23,40 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
         </dl>
+       
+       <%# #make into proper table! %>
+        <table>
+          <% @reviews.each do |review| %>
+          <tr>
+            <th>Customer review</th>
+            <th>Rating:</th>
+          </tr>
+          <tr>
+            <th><%= review.description %></th>
+            <th><%= "#{review.rating}/5" %></th>  
+          </tr>
+        <%end%>
+       </table> 
+
+        <%= form_for :review, url: product_reviews_path(@product) do |f| %>
+          <h3>New Review:</h3>
+          <%= f.label :description %><br>
+          <%= f.text_field :description %><br>
+
+          <%= f.label :rating %><br>
+          <%= f.select :rating, [1, 2, 3, 4, 5] %><br>
+
+          <%= f.submit("Create review") %><br>
+        <% end %>
+
       </div>
     </div>
+  
+
+    
+    
+   
+    
 
   </article>
 
