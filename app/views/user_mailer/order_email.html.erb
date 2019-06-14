@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Greetings! Thank you for your order!</h1>
+   
+    <p>
+      Your order total: <%=@order.total%> <br>
+    </p>
+    <p>
+      <%= render partial:'line_item', collection: @order.line_items %>  
+    </p>
+    <p>Have a great day!</p>
+  </body>
+</html>
