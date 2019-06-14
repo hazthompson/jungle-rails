@@ -6,13 +6,14 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :orders, only: [:create, :show]
 
   resource :cart, only: [:show] do
     post   :add_item
     post   :remove_item
   end
 
-  resources :orders, only: [:create, :show]
+  
 
   namespace :admin do
     root to: 'dashboard#show'
