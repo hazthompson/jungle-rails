@@ -37,18 +37,20 @@
           </tr>
         <%end%>
        </table> 
+        <% if current_user === nil%>
+         <p>No form!</p>
+        <% else %>
+         <%= form_for :review, url: product_reviews_path(@product) do |f| %>
+            <h3>New Review:</h3>
+            <%= f.label :description %><br>
+            <%= f.text_field :description %><br>
 
-        <%= form_for :review, url: product_reviews_path(@product) do |f| %>
-          <h3>New Review:</h3>
-          <%= f.label :description %><br>
-          <%= f.text_field :description %><br>
+            <%= f.label :rating %><br>
+            <%= f.select :rating, [1, 2, 3, 4, 5] %><br>
 
-          <%= f.label :rating %><br>
-          <%= f.select :rating, [1, 2, 3, 4, 5] %><br>
-
-          <%= f.submit("Create review") %><br>
+            <%= f.submit("Create review") %><br>
+          <% end %>
         <% end %>
-
       </div>
     </div>
   
