@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   
 
-  namespace :admin do
+  namespace :admin do #not treating this as a resource (it's just a name) different to nesting resources within resources. with this approach you don't need a controller (and don't have the REST functionality etc that comes with this). This is purely a prefix for the name
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
     resources :categories, only: [:index, :new, :create]
@@ -26,7 +26,10 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
-  
+
+  #resouces :topics do
+    # resources :conversions
+  #end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
