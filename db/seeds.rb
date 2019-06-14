@@ -132,6 +132,9 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+User.create(first_name:"Tom",last_name:"Dunn",email:"t.dunn@gmail.com", password_digest:"123")
+User.create(first_name:"Nelly",last_name:"T",email:"tester@gmail.com", password_digest:"1234")
+User.create(first_name:"Timmy",last_name:"Johnson",email:"test2gmail.com", password_digest:"12343")
 
 Review.create(product_id:1, user_id:1, description:"I love this classy shirt", rating:5)
 Review.create(product_id:1, user_id:2, description:"Nope.. not for me", rating:1)
