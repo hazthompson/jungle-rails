@@ -10,6 +10,10 @@ class ReviewsController < ApplicationController
     redirect_to product_url(@product)
   end
 
+  def destroy
+    
+  end
+
   private
 
   def review_params

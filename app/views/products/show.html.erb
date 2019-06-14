@@ -35,9 +35,14 @@
             <th><%= review.description %></th>
             <th><%= "#{review.rating}/5" %></th>  
           </tr>
+          <% if @current_user.id == review.user_id%>
+            <tr>
+            <button>Delete</button>
+            </tr>
+           <%end%>
         <%end%>
        </table> 
-        <% if current_user === nil%>
+        <% if current_user == nil%>
          <p>No form!</p>
         <% else %>
          <%= form_for :review, url: product_reviews_path(@product) do |f| %>
