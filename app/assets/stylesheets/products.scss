@@ -73,6 +73,24 @@ main section.categories-show {
   }
 }
 
+.review-section {
+  display: flex;
+  flex-direction: column;
+
+  .review-display {
+    margin-left: 12em;
+  }
+}
+
+.form-display {
+  border: solid black 2px;
+  border-radius: 12%;
+  float: right;
+  margin-top: 5em;
+  background-color: gray;
+  padding: 2em;
+}
+
 main section.products-show {
   .product-detail {
     img.main-img {
