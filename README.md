@@ -15,9 +15,10 @@ A mini e-commerce application built with Rails 4.2.
 
 ## Final project
 
-!["Screenshot of homepage"](https://github.com/hazthompson/chattyApp/blob/master/docs/ChattyApp%20homepage.png?raw=true)
-!["Screenshot of homepage"](https://github.com/hazthompson/chattyApp/blob/master/docs/ChattyApp%20homepage.png?raw=true)
-!["Screenshot of homepage"](https://github.com/hazthompson/chattyApp/blob/master/docs/ChattyApp%20homepage.png?raw=true)
+!["Screenshot of homepage"](https://github.com/hazthompson/jungle-rails/blob/master/public/docs/home_page.png?raw=true)
+!["Screenshot of Products page"](https://github.com/hazthompson/jungle-rails/blob/master/public/docs/product_page.png?raw=true)
+!["Screenshot of admin category page"](https://github.com/hazthompson/jungle-rails/blob/master/public/docs/category_page.png?raw=true)
+!["Screenshot of admin products page"](https://github.com/hazthompson/jungle-rails/blob/master/public/docs/admin_products_page.png?raw=true)
 
 ## Dependencies
 
