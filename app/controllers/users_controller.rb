@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to '/', notice: 'User created!' #is this the right redirect?
+      redirect_to '/', notice: 'User created!' 
     else
       render :new
     end
