@@ -72,3 +72,5 @@ RSpec.describe User, type: :model do
   end
   
 end
+
+#add full_error_messages and look into syntex to include and review these
