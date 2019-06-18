@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
   describe 'validations' do
     user1 = User.new(first_name: "Any name", last_name: "Any lastname", email: "test@test.com", password: "password", password_confirmation:"password")
 
@@ -52,6 +53,22 @@ RSpec.describe User, type: :model do
       user1 =User.new(first_name: "Any name", last_name: "Any lastname", email: "test@test.com", password: "pass", password_confirmation:"pass")
       expect(user1).to_not be_valid
     end
-
   end
+
+  describe '.authenticate_with_credentials' do
+    let!(:user1) { User.create(first_name: "Any name", last_name: "Any lastname", email: "test@test.com", password: "password", password_confirmation:"password") }
+
+    it "returns nill if user credentials (password and email) do not match" do
+      expect(User.authenticate_with_credentials(user1.email, "other")).to eq(nil)
+    end
+
+    it "returns user if user credentials (password and email) do match" do
+      expect(User.authenticate_with_credentials(user1.email, "password")).to eq(user1)
+    end
+
+    it "returns nil if email dosn't match any users" do
+      expect(User.authenticate_with_credentials("nomatch@email.com", "password")).to eq(nil)
+    end
+  end
+  
 end
